@@ -11,57 +11,44 @@ var order = require('gulp-order');
 var merge = require('merge-stream');
 var env = 'prod';
 
-var appRootPath = 'web/assets/app/';
+var appRootPath = 'assets/app/';
 
 var paths = {
     app: {
         js_head: [
-            'web/assets/vendor/modernizr/modernizr.js',
-            'web/assets/vendor/lazysizes/lazysizes.min.js'
+            'assets/vendor/modernizr/modernizr.js',
+            'assets/vendor/lazysizes/lazysizes.min.js'
         ],
         js: [
-            'web/assets/vendor/jquery/dist/jquery.min.js',
-            'web/assets/vendor/jquery.easing/js/jquery.easing.min.js',
-            'web/assets/vendor/bootstrap/dist/js/bootstrap.min.js',
-            'web/assets/vendor/scrollreveal/dist/scrollreveal.min.js',
-            'web/assets/vendor/classie/classie.js',
-            'web/assets/vendor/wow/dist/wow.min.js',
-            'web/bundles/appsite/js/script.js'
-        ],
-        js_follow: [
-            'web/assets/vendor/jquery/dist/jquery.min.js',
-            'web/assets/vendor/jquery.easing/js/jquery.easing.min.js',
-            'web/assets/vendor/bootstrap/dist/js/bootstrap.min.js',
-            'web/assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js',
-            'web/assets/vendor/chart.js/dist/Chart.bundle.min.js',
-            'web/assets/vendor/spin.js/spin.min.js',
-            'web/assets/vendor/classie/classie.js',
-            'web/bundles/appsite/js/follow.js',
-            'web/bundles/appsite/js/chart.js'
+            'assets/vendor/jquery/dist/jquery.min.js',
+            'assets/vendor/jquery.easing/js/jquery.easing.min.js',
+            'assets/vendor/bootstrap/dist/js/bootstrap.min.js',
+            'assets/vendor/scrollreveal/dist/scrollreveal.min.js',
+            'assets/vendor/classie/classie.js',
+            'assets/vendor/wow/dist/wow.min.js',
+            'public/js/script.js'
         ],
         js_ie: [
             'web/assets/vendor/html5shiv/dist/html5shiv.js',
             'web/assets/vendor/respond/src/respond.js'
         ],
-        css: [
-            'web/assets/vendor/bootstrap/dist/css/bootstrap.css',
-            'web/assets/vendor/font-awesome/css/font-awesome.min.css',
-            'web/assets/vendor/flag-icon-css/css/flag-icon.min.css',
-            'web/assets/vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css',
-            'web/bundles/appsite/css/main.css',
-            'web/bundles/appsite/css/follow.css',
-            'web/assets/vendor/wow/css/libs/animate.css'
-        ],
         img: [
-            'web/bundles/appsite/images/**'
+            'public/images/**'
+        ],
+        css: [
+            'assets/vendor/bootstrap/dist/css/bootstrap.css',
+            'assets/vendor/font-awesome/css/font-awesome.min.css',
+            'assets/vendor/flag-icon-css/css/flag-icon.min.css',
+            'public/css/main.css',
+            'assets/vendor/wow/css/libs/animate.css'
         ],
         fonts: [
-            'web/bundles/appsite/fonts/**',
-            'web/assets/vendor/font-awesome/fonts/**',
-            'web/assets/vendor/bootstrap/fonts/**'
+            'public/fonts/**',
+            'assets/vendor/font-awesome/fonts/**',
+            'assets/vendor/bootstrap/fonts/**'
         ],
         flags: [
-            'web/assets/vendor/flag-icon-css/flags/**'
+            'assets/vendor/flag-icon-css/flags/**'
         ]
     }
 };
@@ -73,15 +60,6 @@ gulp.task('app-js', function () {
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(appRootPath + 'js/'))
     ;
-});
-
-gulp.task('app-follow-js', function () {
-    return gulp.src(paths.app.js_follow)
-        .pipe(concat('appfollow.js'))
-        .pipe(gulpif(env === 'prod', uglify()))
-        .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest(appRootPath + 'js/'))
-        ;
 });
 
 gulp.task('app-js-head', function () {
@@ -135,7 +113,6 @@ gulp.task('app-watch', function() {
     livereload.listen();
 
     gulp.watch(paths.app.js, ['app-js']);
-    gulp.watch(paths.app.js_follow, ['app-follow-js']);
     gulp.watch(paths.app.js_head, ['app-js-head']);
     gulp.watch(paths.app.js_ie, ['app-js-ie']);
     gulp.watch(paths.app.css, ['app-css']);
@@ -143,5 +120,5 @@ gulp.task('app-watch', function() {
     gulp.watch(paths.app.fonts, ['app-fonts']);
 });
 
-gulp.task('default', ['app-follow-js', 'app-js', 'app-js-head', 'app-js-ie', 'app-css', 'app-fonts', 'app-flags', 'app-img']);
+gulp.task('default', ['app-js', 'app-js-head', 'app-js-ie', 'app-css', 'app-fonts', 'app-flags', 'app-img']);
 gulp.task('watch', ['default', 'app-watch']);

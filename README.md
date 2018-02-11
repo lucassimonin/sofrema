@@ -1,7 +1,5 @@
-Movidiet - demo : https://movidiet.fr/
+Sofrema - Site statique
 =========
-
-Powered by eZ Platform
 You need install Bower & Gulp
 
 installation
@@ -9,6 +7,5 @@ installation
 ```bash
 $ npm install
 $ bower install
-$ composer install
 $ gulp
 ```

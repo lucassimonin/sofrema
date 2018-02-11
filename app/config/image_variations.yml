@@ -1,8 +1,0 @@
-ezpublish:
-    system:
-        default:
-            image_variations:
-                article_image:
-                    reference: ~
-                    filters:
-                        - { name: geometry/scaleheight, params: [180] }
