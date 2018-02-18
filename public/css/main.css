@@ -7,12 +7,12 @@ body {
 
 section p {
     font-size: 15px;
-    font-family: "Helvetica Neue";
+    font-family: "PT Sans";
     font-weight: lighter;
 }
 
 body {
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'PT Sans', sans-serif;
   color:#333;
   position: relative;
 }
@@ -45,7 +45,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'PT Sans', sans-serif;
   text-transform: uppercase;
     font-weight: bold;
 }
@@ -86,9 +86,13 @@ h2.green {
     padding: 25px 0;
 }
 
+.header-content-inner img {
+    padding-top: 4%;
+}
+
 #presentation p {
   font-weight: lighter;
-  color:#fff;
+  color:#bcbcbc;
     margin-top:10px;
 }
 
@@ -156,7 +160,7 @@ h2.formule, h2.prestation, h2.contact {
 }
 
 #contact {
-    padding: 200px 0 250px 0;
+    /*padding: 200px 0 250px 0;*/
     background-size: cover;
     color:#333;
 }
@@ -208,11 +212,11 @@ footer a, footer a:hover, footer a:focus {
 
 header .header-content .header-content-inner {
   text-align: center;
-  color: #fff;
+  color: #393939;
   font-size: 32px;
   letter-spacing: 8px;
-  margin-top: 10%;
-  font-family: 'Helvetica Neue', 'sans-serif';
+  margin-top: 4%;
+  font-family: 'PT Sans', 'sans-serif';
     font-weight: bold;
 }
 
@@ -236,7 +240,7 @@ header .header-content .header-content-inner figure {
 .navbar-default {
   background-color: #fff;
   border-bottom: 1px solid #eee;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'PT Sans', sans-serif;
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
@@ -244,7 +248,7 @@ header .header-content .header-content-inner figure {
   margin-bottom: 0;
 }
 .navbar-default .navbar-header .navbar-brand {
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'PT Sans', sans-serif;
 }
 .navbar-default .navbar-header .navbar-brand:hover,
 .navbar-default .navbar-header .navbar-brand:focus {
@@ -408,7 +412,7 @@ header {
 .item-formule .title .devis {
     width: 80px;
     display: block;
-    font-family: 'Helvetica Neue';
+    font-family: 'PT Sans';
     font-weight: bold;
 }
 
@@ -461,7 +465,7 @@ header {
 
 .article-image img {
     width: 100%;
-    max-height: 180px;
+    max-height: 200px;
 }
 
 .article-content {
@@ -498,12 +502,12 @@ header {
   margin: 15px 0;
     color: #000;
   word-wrap: break-word;
-    font-family: "Helvetica Neue";
-    font-weight: lighter;
+    font-family: "PT Sans";
+    /*font-weight: lighter;*/
 }
 
 .text-bold {
-  font-family: 'Helvetica Neue';
+  font-family: 'PT Sans';
     font-weight: bold;
 }
 
@@ -515,7 +519,7 @@ header {
 
 .price {
   font-size: 24px;
-    font-family: "Helvetica Neue";
+    font-family: "PT Sans";
     font-weight: lighter;
 }
 
